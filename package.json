@@ -1,0 +1,14 @@
+{
+  "name": "ped-database",
+  "version": "1.0.0",
+  "description": "Electricity Department Puducherry (PED) Master Database & Sync Toolkit",
+  "main": "restore-to-postgres.js",
+  "scripts": {
+    "restore": "node restore-to-postgres.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "pg": "^8.13.1",
+    "dotenv": "^16.4.7"
+  }
+}

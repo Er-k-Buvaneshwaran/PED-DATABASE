@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Temporary uncompressed sqlite (ped-connect.db.gz is tracked instead)
+data/ped-connect.db
+data/ped-connect.db-wal
+data/ped-connect.db-shm
+
+# Environment secrets
+.env
+.env.*
