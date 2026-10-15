@@ -111,7 +111,6 @@ async function restore() {
         let inserted = 0;
         const stmt = sqlite.prepare(`SELECT * FROM "${tableName}"`);
 
-        await client.query('BEGIN');
         for (const row of stmt.iterate()) {
           const vals = pragmaCols.map(c => escapeSqlVal(row[c.name]));
           batch.push(`(${vals.join(', ')})`);
@@ -133,7 +132,6 @@ async function restore() {
           inserted += batch.length;
         }
 
-        await client.query('COMMIT');
         console.log(`  -> Inserted ${inserted.toLocaleString()} rows into ${tableName}`);
 
         // Reset sequence if primary key is serial
